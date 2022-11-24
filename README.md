@@ -71,8 +71,8 @@ systemctl restart remote-fs.target
 
 II. Проверка и тестирование.
 
-На клиенте, в каталоге /mnt/upload , создаём тестовый файл tes_file:
-
+На клиенте, в каталоге /mnt/upload , создаём тестовый файл test_file:
+![Создаём тестовый файл](https://github.com/jon/coolproject/raw/master/image/image.png)
 првоеряем его наличие на сервере:
 
 
