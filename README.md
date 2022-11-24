@@ -72,7 +72,10 @@ systemctl restart remote-fs.target
 II. Проверка и тестирование.
 
 На клиенте, в каталоге /mnt/upload , создаём тестовый файл test_file:
+
 ![Создаём тестовый файл](https://github.com/DmitryV81/HW5_nfs/blob/main/client.JPG)
-првоеряем его наличие на сервере:
+
+проверяем его наличие на сервере:
+![Проверяем его наличие на сервере](https://github.com/DmitryV81/HW5_nfs/blob/main/server.JPG)
 
 
