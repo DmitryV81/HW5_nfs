@@ -2,6 +2,8 @@
 
 Цель: развёртывание сервиса NFS и подключение к нему клиента
 
+I. Создание стенда
+
 В предлагаемом Vagrantfile создаются две виртуальные машины: nfss(сервер ip 192.168.50.10) и nfsc(клиент ip 192.168.50.11)
 
 При старте обоих ВМ выполняется скрипт. Для сервера nfss_script.sh, для клиента nfsc_script.sh
@@ -42,3 +44,30 @@ EOF
 
 exportfs -r
 ```
+
+Описание файла nfsc_script.sh.
+Последовательно выполняются команды:
+1. Получаем прилегии root
+```
+sudo -i
+```
+2. Устанавливаем nfs-utils
+```
+yum install nfs-utils
+```
+3. Запускаем firewalld и добавляем правила для nfs
+```
+systemctl enable firevalld --now
+```
+4. Добавляем строку в fstab для автомонтирования
+```
+echo "192.168.50.10:/srv/share/ /mnt nfs vers=3,proto=udp,noauto,xsystemd.automount 0 0" >> /etc/fstab
+```
+5. Перечитываем файлы командой и перезагружаем fstab
+```
+systemctl daemon-reload
+systemctl restart remote-fs.target
+```
+
+II. Проверка и тестирование.
+
