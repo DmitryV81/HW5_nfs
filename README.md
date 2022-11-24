@@ -76,6 +76,7 @@ II. Проверка и тестирование.
 ![Создаём тестовый файл](https://github.com/DmitryV81/HW5_nfs/blob/main/client.JPG)
 
 проверяем его наличие на сервере:
+
 ![Проверяем его наличие на сервере](https://github.com/DmitryV81/HW5_nfs/blob/main/server.JPG)
 
 
